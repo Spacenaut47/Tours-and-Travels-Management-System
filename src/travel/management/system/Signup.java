@@ -73,6 +73,19 @@ public class Signup extends JFrame {
         tsecurity.add("What is the middle name of your youngest child?");
         tsecurity.add("Where were you when you had your first kiss?");
         tsecurity.add("What was the name of your first stuffed animal?");
+        tsecurity.setBounds(190,180,200,25);
+        p1.add(tsecurity);
+        
+        //Answer to the security question
+        JLabel answer = new JLabel("Answer:");
+        answer.setFont(new Font("Tahoma", Font.BOLD, 14));
+        answer.setBounds(50,220,125,25);
+        p1.add(answer); 
+        
+        JTextField tanswer = new JTextField();
+        tanswer.setBounds(190,220,180,25);
+        tanswer.setBorder(BorderFactory.createEmptyBorder());
+        p1.add(tanswer);
         
         
         setVisible(true);
