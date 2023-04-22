@@ -87,7 +87,27 @@ public class Signup extends JFrame {
         tanswer.setBorder(BorderFactory.createEmptyBorder());
         p1.add(tanswer);
         
+        JButton create = new JButton("Create");
+        create.setBackground(Color.WHITE);
+        create.setForeground(new Color(133,193,233));
+        create.setFont(new Font("Tahoma",Font.BOLD,14));
+        create.setBounds(80,250,100,30);
+        p1.add(create);
         
+        JButton back = new JButton("Back");
+        back.setBackground(Color.WHITE);
+        back.setForeground(new Color(133,193,233));
+        back.setFont(new Font("Tahoma",Font.BOLD,14));
+        back.setBounds(250,250,100,30);
+        p1.add(back);
+        
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/Signup.png"));
+        Image i2 = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel image = new JLabel(i3);
+        image.setBounds(580, 50, 250, 250);
+        p1.add(image);
+
         setVisible(true);
     }
     public static void main(String args[]){
