@@ -6,8 +6,7 @@ import java.awt.event.*;
 
 public class Signup extends JFrame implements ActionListener{
     JButton create,back;
-    JTextField tname,tusername,tanswer;
-    JPasswordField tcpassword,tpassword;
+    JTextField tname,tusername,tanswer,tcpassword,tpassword;
     Choice tsecurity;
     Signup(){
         setBounds(150,200,900,360);
@@ -49,7 +48,7 @@ public class Signup extends JFrame implements ActionListener{
         password.setBounds(50,100,125,25);
         p1.add(password); 
         
-        tpassword = new JPasswordField();
+        tpassword = new JTextField();
         tpassword.setBounds(190,100,180,25);
         tpassword.setBorder(BorderFactory.createEmptyBorder());
         p1.add(tpassword);
@@ -61,7 +60,7 @@ public class Signup extends JFrame implements ActionListener{
         cpassword.setBounds(50,140,150,25);
         p1.add(cpassword); 
         
-        tcpassword = new JPasswordField();
+        tcpassword = new JTextField();
         tcpassword.setBounds(190,140,180,25);
         tcpassword.setBorder(BorderFactory.createEmptyBorder());
         p1.add(tcpassword);
@@ -122,8 +121,8 @@ public class Signup extends JFrame implements ActionListener{
         if(ae.getSource() == create){
             String username = tusername.getText();
             String name = tname.getText();
-            char password[] = tpassword.getPassword();
-            char cpassword[] = tcpassword.getPassword();
+            String password = tpassword.getText();
+            String cpassword = tcpassword.getText();
             String question = tsecurity.getSelectedItem();
             String answer = tanswer.getText();
             
