@@ -5,7 +5,9 @@ import java.awt.*;
 
 
 public class Dashboard extends JFrame {
-    Dashboard(){
+    String username;
+    Dashboard(String username){
+        this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(null);
         
@@ -171,6 +173,6 @@ public class Dashboard extends JFrame {
         setVisible(true);
     }
     public static void main(String args[]){
-        new Dashboard();
+        new Dashboard("");
     }
 }
