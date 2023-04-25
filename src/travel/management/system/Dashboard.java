@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class Dashboard extends JFrame implements ActionListener {
     String username;
-    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkPackages;
+    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkPackages,bookPackages;
     Dashboard(String username){
         this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -82,12 +82,13 @@ public class Dashboard extends JFrame implements ActionListener {
         checkPackages.addActionListener(this);
         p2.add(checkPackages);
         
-        JButton bookPackages = new JButton("Book Package");
+        bookPackages = new JButton("Book Package");
         bookPackages.setBounds(0,250,300,50);
         bookPackages.setBackground(new Color(33, 35, 122));
         bookPackages.setForeground(Color.WHITE);
         bookPackages.setFont(new Font("Tahoma",Font.PLAIN,15));
         bookPackages.setMargin(new Insets(0,0,0,120));
+        bookPackages.addActionListener(this);
         p2.add(bookPackages);
         
         JButton viewPackages = new JButton("View Package");
@@ -187,6 +188,8 @@ public class Dashboard extends JFrame implements ActionListener {
                 new UpdateCustomer(username);
             }else if(ae.getSource() == checkPackages){
                 new CheckPackages();
+            }else if(ae.getSource() == bookPackages){
+                new BookPackage(username);
             }
         }
     public static void main(String args[]){
