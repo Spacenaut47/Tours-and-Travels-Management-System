@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class Dashboard extends JFrame implements ActionListener {
     String username;
-    JButton addPersonalDetails,viewPersonalDetails;
+    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkPackages;
     Dashboard(String username){
         this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -47,12 +47,13 @@ public class Dashboard extends JFrame implements ActionListener {
         addPersonalDetails.addActionListener(this);
         p2.add(addPersonalDetails);
         
-        JButton updatePersonalDetails = new JButton("Update Personal Details");
+        updatePersonalDetails = new JButton("Update Personal Details");
         updatePersonalDetails.setBounds(0,50,300,50);
         updatePersonalDetails.setBackground(new Color(33, 35, 122));
         updatePersonalDetails.setForeground(Color.WHITE);
         updatePersonalDetails.setFont(new Font("Tahoma",Font.PLAIN,15));
         updatePersonalDetails.setMargin(new Insets(0,0,0,30));
+        updatePersonalDetails.addActionListener(this);
         p2.add(updatePersonalDetails);
         
         viewPersonalDetails = new JButton("View Personal Details");
@@ -72,12 +73,13 @@ public class Dashboard extends JFrame implements ActionListener {
         deletePersonalDetails.setMargin(new Insets(0,0,0,40));
         p2.add(deletePersonalDetails);
         
-        JButton checkPackages = new JButton("Check Packages");
+        checkPackages = new JButton("Check Packages");
         checkPackages.setBounds(0,200,300,50);
         checkPackages.setBackground(new Color(33, 35, 122));
         checkPackages.setForeground(Color.WHITE);
         checkPackages.setFont(new Font("Tahoma",Font.PLAIN,15));
         checkPackages.setMargin(new Insets(0,0,0,110));
+        checkPackages.addActionListener(this);
         p2.add(checkPackages);
         
         JButton bookPackages = new JButton("Book Package");
@@ -181,6 +183,10 @@ public class Dashboard extends JFrame implements ActionListener {
                 new AddCustomer(username);
             }else if(ae.getSource() == viewPersonalDetails){
                 new ViewCustomer(username);
+            }else if(ae.getSource() == updatePersonalDetails){
+                new UpdateCustomer(username);
+            }else if(ae.getSource() == checkPackages){
+                new CheckPackages();
             }
         }
     public static void main(String args[]){
