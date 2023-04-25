@@ -13,14 +13,14 @@ public class AddCustomer extends JFrame implements ActionListener {
     JRadioButton rmale,rfemale,rnonbinary;
     JButton add,back;
     
-    AddCustomer(){
+    AddCustomer(String username){
         setBounds(450,200,850,550);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
         
-        JLabel username = new JLabel("Usenname: ");
-        username.setBounds(30,50,150,25);
-        add(username);
+        JLabel pusername = new JLabel("Username: ");
+        pusername.setBounds(30,50,150,25);
+        add(pusername);
         
         lblusername = new JLabel("");
         lblusername.setBounds(220,50,150,25);
@@ -177,6 +177,6 @@ public class AddCustomer extends JFrame implements ActionListener {
     }
     
     public static void main(String args[]){
-        new AddCustomer();
+        new AddCustomer("");
     }
 }
